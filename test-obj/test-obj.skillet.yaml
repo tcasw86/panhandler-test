@@ -1,0 +1,17 @@
+name: test-obj
+label: Test Address Object
+description: Create test object
+type: panos
+labels:
+    collection: Unknown
+variables: []
+snippets:
+-   name: address-469963
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/vsys/entry[@name="vsys1"]
+    element: |-
+        <address>
+          <entry name="test-object">
+            <ip-netmask>8.8.8.8/32</ip-netmask>
+            <description>test-object</description>
+          </entry>
+        </address>
