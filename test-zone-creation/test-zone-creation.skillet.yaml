@@ -1,0 +1,17 @@
+name: test-zone-creation
+label: Test Zone Creation
+description: Skillet Generated from 192.168.68.113 using initial-config-10.10.24 and
+    test-zone
+type: panos
+labels:
+    collection: Unknown
+variables: []
+snippets:
+-   name: entry-5511
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/vsys/entry[@name="vsys1"]/zone
+    element: |-
+        <entry name="TEST-Zone">
+          <network>
+            <layer3/>
+          </network>
+        </entry>
