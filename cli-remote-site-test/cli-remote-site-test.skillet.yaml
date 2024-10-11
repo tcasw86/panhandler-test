@@ -1,0 +1,651 @@
+name: cli-remote-site-test
+label: CLI Remote Site Test
+description: Skillet Generated from uploaded configs
+type: panos
+labels:
+    collection: Unknown
+variables: []
+snippets:
+-   name: set_cli
+    element: |-
+        set shared certificate TESTHOST-Root-CA subject-hash 9d49e37c
+        set shared certificate TESTHOST-Root-CA issuer-hash 9d49e37c
+        set shared certificate TESTHOST-Root-CA not-valid-before "Oct 10 20:57:01 2024 GMT"
+        set shared certificate TESTHOST-Root-CA issuer "CN = TESTHOST-RootCA"
+        set shared certificate TESTHOST-Root-CA not-valid-after "Oct 10 20:57:01 2026 GMT"
+        set shared certificate TESTHOST-Root-CA common-name TESTHOST-RootCA
+        set shared certificate TESTHOST-Root-CA expiry-epoch 1791665821
+        set shared certificate TESTHOST-Root-CA ca yes
+        set shared certificate TESTHOST-Root-CA subject "CN = TESTHOST-RootCA"
+        set shared certificate TESTHOST-Root-CA public-key "-----BEGIN CERTIFICATE----- MIIC3zCCAcegAwIBAgIUJET/UJ+oryV5TJdtvmc8OHgC5sEwDQYJKoZIhvcNAQEL BQAwGjEYMBYGA1UEAwwPVEVTVEhPU1QtUm9vdENBMB4XDTI0MTAxMDIwNTcwMVoX DTI2MTAxMDIwNTcwMVowGjEYMBYGA1UEAwwPVEVTVEhPU1QtUm9vdENBMIIBIjAN BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBBbms+3BVnb2kbHhycFm+zfPgHh WYW3ogSkpdnXpHEGPTnYfLvp7Lo/NzU6HwyMERd8w3VFS+yOkpjMDRDB5acXGKbi RLeIkcHX2uKZVsEqYy10MLSuiQozhesrbYKBiz9irJwOvF/OpGOhMdSECO67knYN 7rKvSfJPsPse2vAAcMQ4kWW6nyf/FccHzhAZC+NpAiNa1oF8HTtivNDr/0havKCO QisKmOXo0k8jrMIrLHmELopTCe7fFi5FNqh8oBSWdQDqpP+KAzbhDCumsdry4phu aB7GfNKWT0jRTYYbv9JsMpqKp7Yj2/djq9dwl06lDQvIwbcl9ywb6px3oQIDAQAB ox0wGzAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwICBDANBgkqhkiG9w0BAQsFAAOC AQEAMAWanguium6xNdDZcTTSpKZ5josMeFOTMr7SAyPn8XC/QrqzZG2xPviznQSA T0ERxOWKtH8xHJuMgYRPImPUDkWGgDC8lQIWV3l7z4afHaIBc/hV6wOykwBkTXSx 67dHo0L7Kq99uSPNaZOU4Yz8wS9jMA2NqEHiRsj8t9ABgdJU1iG1G9YM1GPgHbxb tbL4X73vGWI0Gty5WFvZYzD6ijZCbFkEBWV/irldDvaTQsBNAA8u166IpQWBgkSo CPZt8hkBZ1OKePJMiHLZy+apwBNrH/lg9IeJib/BeeGHzAsnsBysWJ+FtBMRwBa9 qjLgtpIX5xUAtPcef9W/Z2a+Fg== -----END CERTIFICATE----- "
+        set shared certificate TESTHOST-Root-CA algorithm RSA
+        set shared certificate TESTHOST-Root-CA private-key -AQ==CGFsssaxFWO6Q12VKE2HYSRFH7U=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
+        set shared certificate TESTHOST-GPVPN-Cert subject-hash d4e58ad8
+        set shared certificate TESTHOST-GPVPN-Cert issuer-hash 9d49e37c
+        set shared certificate TESTHOST-GPVPN-Cert not-valid-before "Oct 10 20:57:55 2024 GMT"
+        set shared certificate TESTHOST-GPVPN-Cert issuer "CN = TESTHOST-RootCA"
+        set shared certificate TESTHOST-GPVPN-Cert not-valid-after "Sep 30 20:57:55 2026 GMT"
+        set shared certificate TESTHOST-GPVPN-Cert common-name 1.1.1.1
+        set shared certificate TESTHOST-GPVPN-Cert expiry-epoch 1790801875
+        set shared certificate TESTHOST-GPVPN-Cert ca no
+        set shared certificate TESTHOST-GPVPN-Cert subject "CN = 1.1.1.1"
+        set shared certificate TESTHOST-GPVPN-Cert public-key "-----BEGIN CERTIFICATE----- MIIDFzCCAf+gAwIBAgIEXAoBSDANBgkqhkiG9w0BAQsFADAaMRgwFgYDVQQDDA9U RVNUSE9TVC1Sb290Q0EwHhcNMjQxMDEwMjA1NzU1WhcNMjYwOTMwMjA1NzU1WjAS MRAwDgYDVQQDDAcxLjEuMS4xMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC AQEA383edfNLaSv0JVm+n44gRku46NrZ86wIMe0LHqpaJ1fiVeF/SgvDfZ0DnBus 3PenA21HrcctvKsLIoY6ccu2ULgTmq7u0gad9izKnr8FBbT/gOMNeUXIH/ZLDuT7 TFPFuVgiL89ixSR35wcX0/LIhdXJ8Cs4wgdawbPl79VTUcYd3Y8kVPAx+IO+SAVC ZFLZtbhEBm9ZaNWD5oxRPoEm5dsyYbn3VYsojUiY+OmCctEPSgutq6bUP5oh2aWi l81TxVwYIGY6sfpyCxhJY/zIEGE1pMjZPnlN8P/K+jIrZ58MAltbu+HBkwMPZ4rj lUSM1UNZowqiVr6aUu2mE1WyowIDAQABo20wazAJBgNVHRMEAjAAMAsGA1UdDwQE AwIDuDAnBgNVHSUEIDAeBggrBgEFBQcDAQYIKwYBBQUHAwIGCCsGAQUFBwMFMAkG A1UdIwQCMAAwHQYDVR0OBBYEFOGUKDBu0JMip1EIUK2piUwJao2FMA0GCSqGSIb3 DQEBCwUAA4IBAQBTE8QKhAExhlx3HxMwB6LNrgNCo92cKt0FRuumrpVpvo3SCj+E bMl+OgOz36sFkNKDyLrouTBaPThDZ7l+PpwjKEr0tOsLSnF+BcRidKxuDc2tivCi CauMJKp5PAid5bJs6KbGjUovmvs7Chge/is3NQlQPCf++kUpCl4EO0P9QMOHdXBE MRGHK4cHfIjcKTw2Uy9cSj2eGpU76QShuEnXGLb0hoEp5J1ubXWqSX6m1b0qxdkZ Omrmv1+Y8MMqlOC4qMIY/Tzsd8zmLhGQGIxD5RYqUTzstA0LuxEL1Cxjs7KIqIuj B3QCpR/dB9UHRKTdUsptNZXj878ejliKxYCX -----END CERTIFICATE----- "
+        set shared certificate TESTHOST-GPVPN-Cert algorithm RSA
+        set shared certificate TESTHOST-GPVPN-Cert private-key -AQ==OACtpRBxcphi2WLkeq5L38DyRL0=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
+        set shared ssl-tls-service-profile GPVPN_TLS_Profile protocol-settings min-version tls1-1
+        set shared ssl-tls-service-profile GPVPN_TLS_Profile protocol-settings max-version max
+        set shared ssl-tls-service-profile GPVPN_TLS_Profile certificate TESTHOST-GPVPN-Cert
+        set shared local-user-database user
+        set shared authentication-profile LocalDB_Auth_Profile multi-factor-auth mfa-enable no
+        set shared authentication-profile LocalDB_Auth_Profile method local-database
+        set shared authentication-profile LocalDB_Auth_Profile allow-list all
+        set tag Blacklist color color14
+        set deviceconfig system update-schedule threats recurring threshold 24
+        set deviceconfig system update-schedule threats recurring daily at 00:15
+        set deviceconfig system update-schedule threats recurring daily action download-and-install
+        set deviceconfig system update-schedule wildfire recurring real-time
+        set deviceconfig system update-schedule anti-virus recurring hourly action download-and-install
+        set deviceconfig system timezone US/Eastern
+        set deviceconfig system hostname TESTHOST
+        set deviceconfig system ntp-servers primary-ntp-server ntp-server-address pool.ntp.org
+        set deviceconfig system ntp-servers primary-ntp-server authentication-type none
+        set network profiles interface-management-profile Ping-Only ping yes
+        set network interface ethernet ethernet1/1 layer3 interface-management-profile Ping-Only
+        set network interface ethernet ethernet1/1 layer3 lldp enable no
+        set network interface ethernet ethernet1/1 layer3 ndp-proxy enabled no
+        set network interface ethernet ethernet1/1 layer3 ip 1.1.1.1/30
+        set network interface ethernet ethernet1/2 layer3 interface-management-profile Ping-Only
+        set network interface ethernet ethernet1/2 layer3 lldp enable no
+        set network interface ethernet ethernet1/2 layer3 ndp-proxy enabled no
+        set network interface ethernet ethernet1/2 layer3 ip 192.168.0.1/24
+        set network interface tunnel units tunnel.1
+        set network tunnel global-protect-gateway GP-Gateway-N local-address ip ipv4 1.1.1.1/30
+        set network tunnel global-protect-gateway GP-Gateway-N local-address interface ethernet1/1
+        set network tunnel global-protect-gateway GP-Gateway-N local-address ip-address-family ipv4
+        set network tunnel global-protect-gateway GP-Gateway-N client exclude-video-traffic enabled no
+        set network tunnel global-protect-gateway GP-Gateway-N client exclude-video-traffic applications
+        set network tunnel global-protect-gateway GP-Gateway-N client dns-server primary 4.2.2.2
+        set network tunnel global-protect-gateway GP-Gateway-N client dns-server secondary 8.8.8.8
+        set network tunnel global-protect-gateway GP-Gateway-N ipsec third-party-client enable no
+        set network tunnel global-protect-gateway GP-Gateway-N tunnel-interface tunnel.1
+        set network tunnel global-protect-gateway GP-Gateway-N ip-pool
+        set network virtual-router default interface ethernet1/1
+        set network virtual-router default interface ethernet1/2
+        set network virtual-router default interface tunnel.1
+        set network virtual-router default routing-table ip static-route "Default Route" interface ethernet1/1
+        set network virtual-router default routing-table ip static-route "Default Route" nexthop ip-address 1.1.1.2
+        set network virtual-router default routing-table ip static-route "Default Route" metric 10
+        set network virtual-router default routing-table ip static-route "Default Route" path-monitor enable no
+        set network virtual-router default routing-table ip static-route "Default Route" path-monitor failure-condition any
+        set network virtual-router default routing-table ip static-route "Default Route" path-monitor hold-time 2
+        set network virtual-router default routing-table ip static-route "Default Route" route-table unicast
+        set network virtual-router default routing-table ip static-route "Default Route" destination 0.0.0.0/0
+        set zone inside network layer3 ethernet1/2
+        set zone inside enable-user-identification yes
+        set zone outside network layer3 ethernet1/1
+        set zone global-protect network layer3 tunnel.1
+        set zone global-protect enable-user-identification yes
+        set address TESTHOST-LAN ip-netmask 192.168.0.0/24
+        set address TESTHOST-LAN description "TEST SITE LAN SUBNET"
+        set address GlobalProtect_Client_IPPool ip-netmask 192.168.1.0/24
+        set network dhcp interface ethernet1/2 server ip-pool 192.168.0.21-192.168.0.250
+        set network dhcp interface ethernet1/2 server option dns primary 4.2.2.2
+        set network dhcp interface ethernet1/2 server option dns secondary 8.8.8.8
+        set network dhcp interface ethernet1/2 server option lease timeout 8
+        set network dhcp interface ethernet1/2 server option gateway 192.168.0.1
+        set network dhcp interface ethernet1/2 server option subnet-mask 255.255.255.0
+        set network dhcp interface ethernet1/2 server mode enabled
+        set network dhcp interface ethernet1/2 server probe-ip yes
+        set global-protect global-protect-portal GP-Portal portal-config local-address ip ipv4 1.1.1.1/30
+        set global-protect global-protect-portal GP-Portal portal-config local-address interface ethernet1/1
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth user-credential-or-client-cert-required no
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth os Any
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth authentication-profile LocalDB_Auth_Profile
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth authentication-message "Enter login credentials"
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth auto-retrieve-passcode no
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth username-label Username
+        set global-protect global-protect-portal GP-Portal portal-config client-auth Client_Auth password-label Password
+        set global-protect global-protect-portal GP-Portal portal-config custom-login-page factory-default
+        set global-protect global-protect-portal GP-Portal portal-config custom-home-page factory-default
+        set global-protect global-protect-portal GP-Portal portal-config ssl-tls-service-profile GPVPN_TLS_Profile
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB hip-collection max-wait-time 20
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB hip-collection collect-hip-data no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gateways external list TESTHOST ip ipv4 1.1.1.1
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gateways external list TESTHOST priority-rule Any priority 1
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gateways external list TESTHOST manual no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gateways external cutoff-time 5
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB authentication-override generate-cookie no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB source-user any
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB os any
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB agent-ui max-agent-user-overrides 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB agent-ui agent-user-override-timeout 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config connect-method value user-logon
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config refresh-config-interval value 24
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config agent-user-override value allowed
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config uninstall value allowed
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config client-upgrade value prompt
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config enable-signout value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config use-sso value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config use-sso-pin value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config use-sso-macos value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config logout-remove-sso value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config krb-auth-fail-fallback value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config default-browser value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config retry-tunnel value 30
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config retry-timeout value 5
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config traffic-enforcement value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config enforce-globalprotect value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config captive-portal-exception-timeout value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config traffic-blocking-notification-delay value 15
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config display-traffic-blocking-notification-msg value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config traffic-blocking-notification-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Notice</h1><p style="margin: 0;font-size: 15px; line-height: 1.2em;">To access the network, you must first connect to GlobalProtect.</p></div>'
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config allow-traffic-blocking-notification-dismissal value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config display-captive-portal-detection-msg value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config captive-portal-detection-msg value '<div style="font-family:'Helvetica Neue';"><h1 style="color:red;text-align:center; margin: 0; font-size: 30px;">Captive Portal Detected</h1><p style="margin: 0; font-size: 15px; line-height: 1.2em;">GlobalProtect has temporarily permitted network access for you to connect to the Internet. Follow instructions from your internet provider.</p><p style="margin: 0; font-size: 15px; line-height: 1.2em;">If you let the connection time out, open GlobalProtect and click Connect to try again.</p></div>'
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config captive-portal-notification-delay value 5
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config certificate-store-lookup value user-and-machine
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config scep-certificate-renewal-period value 7
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config retain-connection-smartcard-removal value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config enable-advanced-view value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config enable-do-not-display-this-welcome-page-again value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config user-accept-terms-before-creating-tunnel value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config rediscover-network value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config resubmit-host-info value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config can-change-portal value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config can-continue-if-portal-cert-invalid value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config show-agent-icon value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config user-switch-tunnel-rename-timeout value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config pre-logon-tunnel-rename-timeout value -1
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config preserve-tunnel-upon-user-logoff-timeout value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config ipsec-failover-ssl value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config display-tunnel-fallback-notification value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config ssl-only-selection value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config tunnel-mtu value 1400
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config max-internal-gateway-connection-attempts value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config portal-timeout value 5
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config connect-timeout value 5
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config receive-timeout value 30
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config split-tunnel-option value network-traffic
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config enforce-dns value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config append-local-search-domain value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config flush-dns value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config proxy-multiple-autodetect value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config use-proxy value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config wsc-autodetect value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config mfa-enabled value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config mfa-listening-port value 4501
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config mfa-notification-msg value "You have attempted to access a protected resource that requires additional authentication. Proceed to authenticate at"
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config mfa-prompt-suppress-time value 0
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config ipv6-preferred value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config log-gateway value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config cdl-log value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config dem-notification value yes
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config dem-agent value not-install
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config quarantine-add-message value "Access to the network from this device has been restricted as per your organization's security policy. Please contact your IT Administrator."
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config quarantine-remove-message value "Access to the network from this device has been restored as per your organization's security policy."
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config init-panel value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB gp-app-config config user-input-on-top value no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB save-user-credentials 1
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB portal-2fa no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB manual-only-gateway-2fa no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB internal-gateway-2fa no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB auto-discovery-external-gateway-2fa no
+        set global-protect global-protect-portal GP-Portal client-config configs Agent_LocalDB mdm-enrollment-port 443
+        set global-protect global-protect-portal GP-Portal satellite-config client-certificate local
+        set global-protect global-protect-gateway GP-Gateway roles default login-lifetime days 30
+        set global-protect global-protect-gateway GP-Gateway roles default inactivity-logout 180
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB os Any
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB authentication-profile LocalDB_Auth_Profile
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB authentication-message "Enter login credentials"
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB user-credential-or-client-cert-required no
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB auto-retrieve-passcode no
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB username-label Username
+        set global-protect global-protect-gateway GP-Gateway client-auth Agent_LocalDB password-label Password
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling include-domains list
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling exclude-domains list
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling access-route
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling exclude-access-route
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling include-applications
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config split-tunneling exclude-applications
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config authentication-override generate-cookie no
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config source-address ip-address
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config source-address region
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config source-user any
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config authentication-server-ip-pool
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config ip-pool 192.168.1.10-192.168.1.200
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config os any
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config retrieve-framed-ip-address no
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel-configs Agent_Config no-direct-access-to-local-network no
+        set global-protect global-protect-gateway GP-Gateway ssl-tls-service-profile GPVPN_TLS_Profile
+        set global-protect global-protect-gateway GP-Gateway tunnel-mode yes
+        set global-protect global-protect-gateway GP-Gateway remote-user-tunnel tunnel.1
+        set profiles virus AV-Profile decoder ftp action reset-both
+        set profiles virus AV-Profile decoder ftp wildfire-action reset-both
+        set profiles virus AV-Profile decoder ftp mlav-action reset-both
+        set profiles virus AV-Profile decoder http action reset-both
+        set profiles virus AV-Profile decoder http wildfire-action reset-both
+        set profiles virus AV-Profile decoder http mlav-action reset-both
+        set profiles virus AV-Profile decoder http2 action reset-both
+        set profiles virus AV-Profile decoder http2 wildfire-action reset-both
+        set profiles virus AV-Profile decoder http2 mlav-action reset-both
+        set profiles virus AV-Profile decoder imap action alert
+        set profiles virus AV-Profile decoder imap wildfire-action alert
+        set profiles virus AV-Profile decoder imap mlav-action alert
+        set profiles virus AV-Profile decoder pop3 action alert
+        set profiles virus AV-Profile decoder pop3 wildfire-action alert
+        set profiles virus AV-Profile decoder pop3 mlav-action alert
+        set profiles virus AV-Profile decoder smb action reset-both
+        set profiles virus AV-Profile decoder smb wildfire-action reset-both
+        set profiles virus AV-Profile decoder smb mlav-action reset-both
+        set profiles virus AV-Profile decoder smtp action alert
+        set profiles virus AV-Profile decoder smtp wildfire-action alert
+        set profiles virus AV-Profile decoder smtp mlav-action alert
+        set profiles virus AV-Alert decoder smtp action alert
+        set profiles virus AV-Alert decoder smtp wildfire-action alert
+        set profiles virus AV-Alert decoder smtp mlav-action alert
+        set profiles virus AV-Alert decoder smb action alert
+        set profiles virus AV-Alert decoder smb wildfire-action alert
+        set profiles virus AV-Alert decoder smb mlav-action alert
+        set profiles virus AV-Alert decoder pop3 action alert
+        set profiles virus AV-Alert decoder pop3 wildfire-action alert
+        set profiles virus AV-Alert decoder pop3 mlav-action alert
+        set profiles virus AV-Alert decoder imap action alert
+        set profiles virus AV-Alert decoder imap wildfire-action alert
+        set profiles virus AV-Alert decoder imap mlav-action alert
+        set profiles virus AV-Alert decoder http2 action alert
+        set profiles virus AV-Alert decoder http2 wildfire-action alert
+        set profiles virus AV-Alert decoder http2 mlav-action alert
+        set profiles virus AV-Alert decoder http action alert
+        set profiles virus AV-Alert decoder http wildfire-action alert
+        set profiles virus AV-Alert decoder http mlav-action alert
+        set profiles virus AV-Alert decoder ftp action alert
+        set profiles virus AV-Alert decoder ftp wildfire-action alert
+        set profiles virus AV-Alert decoder ftp mlav-action alert
+        set profiles spyware AS-Inbound rules reset-crit-high-med action reset-both
+        set profiles spyware AS-Inbound rules reset-crit-high-med severity critical
+        set profiles spyware AS-Inbound rules reset-crit-high-med severity high
+        set profiles spyware AS-Inbound rules reset-crit-high-med severity medium
+        set profiles spyware AS-Inbound rules reset-crit-high-med threat-name any
+        set profiles spyware AS-Inbound rules reset-crit-high-med category any
+        set profiles spyware AS-Inbound rules reset-crit-high-med packet-capture single-packet
+        set profiles spyware AS-Inbound rules default-low-info action default
+        set profiles spyware AS-Inbound rules default-low-info severity low
+        set profiles spyware AS-Inbound rules default-low-info severity informational
+        set profiles spyware AS-Inbound rules default-low-info threat-name any
+        set profiles spyware AS-Inbound rules default-low-info category any
+        set profiles spyware AS-Inbound rules default-low-info packet-capture disable
+        set profiles spyware AS-Outbound rules reset-crit-high-med action reset-both
+        set profiles spyware AS-Outbound rules reset-crit-high-med severity critical
+        set profiles spyware AS-Outbound rules reset-crit-high-med severity high
+        set profiles spyware AS-Outbound rules reset-crit-high-med severity medium
+        set profiles spyware AS-Outbound rules reset-crit-high-med threat-name any
+        set profiles spyware AS-Outbound rules reset-crit-high-med category any
+        set profiles spyware AS-Outbound rules reset-crit-high-med packet-capture single-packet
+        set profiles spyware AS-Outbound rules default-low-info action default
+        set profiles spyware AS-Outbound rules default-low-info severity low
+        set profiles spyware AS-Outbound rules default-low-info severity informational
+        set profiles spyware AS-Outbound rules default-low-info threat-name any
+        set profiles spyware AS-Outbound rules default-low-info category any
+        set profiles spyware AS-Outbound rules default-low-info packet-capture disable
+        set profiles spyware AS-Internal rules reset-crit-high action reset-both
+        set profiles spyware AS-Internal rules reset-crit-high severity critical
+        set profiles spyware AS-Internal rules reset-crit-high severity high
+        set profiles spyware AS-Internal rules reset-crit-high threat-name any
+        set profiles spyware AS-Internal rules reset-crit-high category any
+        set profiles spyware AS-Internal rules reset-crit-high packet-capture single-packet
+        set profiles spyware AS-Internal rules default-med-low-info action default
+        set profiles spyware AS-Internal rules default-med-low-info severity low
+        set profiles spyware AS-Internal rules default-med-low-info severity informational
+        set profiles spyware AS-Internal rules default-med-low-info severity medium
+        set profiles spyware AS-Internal rules default-med-low-info threat-name any
+        set profiles spyware AS-Internal rules default-med-low-info category any
+        set profiles spyware AS-Internal rules default-med-low-info packet-capture disable
+        set profiles spyware AS-Alert rules alert-all action alert
+        set profiles spyware AS-Alert rules alert-all severity any
+        set profiles spyware AS-Alert rules alert-all threat-name any
+        set profiles spyware AS-Alert rules alert-all category any
+        set profiles spyware AS-Alert rules alert-all packet-capture single-packet
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med action reset-both
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med vendor-id any
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med severity critical
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med severity high
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med severity medium
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med cve any
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med threat-name any
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med host any
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med category any
+        set profiles vulnerability VP-Inbound rules reset-crit-high-med packet-capture single-packet
+        set profiles vulnerability VP-Inbound rules reset-low-info action default
+        set profiles vulnerability VP-Inbound rules reset-low-info vendor-id any
+        set profiles vulnerability VP-Inbound rules reset-low-info severity low
+        set profiles vulnerability VP-Inbound rules reset-low-info severity informational
+        set profiles vulnerability VP-Inbound rules reset-low-info cve any
+        set profiles vulnerability VP-Inbound rules reset-low-info threat-name any
+        set profiles vulnerability VP-Inbound rules reset-low-info host any
+        set profiles vulnerability VP-Inbound rules reset-low-info category any
+        set profiles vulnerability VP-Inbound rules reset-low-info packet-capture disable
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med action reset-both
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med vendor-id any
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med severity critical
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med severity high
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med severity medium
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med cve any
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med threat-name any
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med host any
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med category any
+        set profiles vulnerability VP-Outbound rules reset-crit-high-med packet-capture single-packet
+        set profiles vulnerability VP-Outbound rules reset-low-info action default
+        set profiles vulnerability VP-Outbound rules reset-low-info vendor-id any
+        set profiles vulnerability VP-Outbound rules reset-low-info severity low
+        set profiles vulnerability VP-Outbound rules reset-low-info severity informational
+        set profiles vulnerability VP-Outbound rules reset-low-info cve any
+        set profiles vulnerability VP-Outbound rules reset-low-info threat-name any
+        set profiles vulnerability VP-Outbound rules reset-low-info host any
+        set profiles vulnerability VP-Outbound rules reset-low-info category any
+        set profiles vulnerability VP-Outbound rules reset-low-info packet-capture disable
+        set profiles vulnerability VP-Internal rules reset-crit-high action reset-both
+        set profiles vulnerability VP-Internal rules reset-crit-high vendor-id any
+        set profiles vulnerability VP-Internal rules reset-crit-high severity critical
+        set profiles vulnerability VP-Internal rules reset-crit-high severity high
+        set profiles vulnerability VP-Internal rules reset-crit-high cve any
+        set profiles vulnerability VP-Internal rules reset-crit-high threat-name any
+        set profiles vulnerability VP-Internal rules reset-crit-high host any
+        set profiles vulnerability VP-Internal rules reset-crit-high category any
+        set profiles vulnerability VP-Internal rules reset-crit-high packet-capture single-packet
+        set profiles vulnerability VP-Internal rules reset-med-low-info action default
+        set profiles vulnerability VP-Internal rules reset-med-low-info vendor-id any
+        set profiles vulnerability VP-Internal rules reset-med-low-info severity low
+        set profiles vulnerability VP-Internal rules reset-med-low-info severity informational
+        set profiles vulnerability VP-Internal rules reset-med-low-info severity medium
+        set profiles vulnerability VP-Internal rules reset-med-low-info cve any
+        set profiles vulnerability VP-Internal rules reset-med-low-info threat-name any
+        set profiles vulnerability VP-Internal rules reset-med-low-info host any
+        set profiles vulnerability VP-Internal rules reset-med-low-info category any
+        set profiles vulnerability VP-Internal rules reset-med-low-info packet-capture disable
+        set profiles vulnerability VP-Alert rules alert-all action alert
+        set profiles vulnerability VP-Alert rules alert-all vendor-id any
+        set profiles vulnerability VP-Alert rules alert-all severity any
+        set profiles vulnerability VP-Alert rules alert-all cve any
+        set profiles vulnerability VP-Alert rules alert-all threat-name any
+        set profiles vulnerability VP-Alert rules alert-all host any
+        set profiles vulnerability VP-Alert rules alert-all category any
+        set profiles vulnerability VP-Alert rules alert-all packet-capture disable
+        set profiles url-filtering URL-DefaultProfile credential-enforcement mode disabled
+        set profiles url-filtering URL-DefaultProfile credential-enforcement log-severity medium
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block command-and-control
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block dynamic-dns
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block grayware
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block hacking
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block malware
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block newly-registered-domain
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block parked
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block phishing
+        set profiles url-filtering URL-DefaultProfile credential-enforcement block ransomware
+        set profiles url-filtering URL-DefaultProfile alert abortion
+        set profiles url-filtering URL-DefaultProfile alert abused-drugs
+        set profiles url-filtering URL-DefaultProfile alert adult
+        set profiles url-filtering URL-DefaultProfile alert alcohol-and-tobacco
+        set profiles url-filtering URL-DefaultProfile alert auctions
+        set profiles url-filtering URL-DefaultProfile alert business-and-economy
+        set profiles url-filtering URL-DefaultProfile alert computer-and-internet-info
+        set profiles url-filtering URL-DefaultProfile alert content-delivery-networks
+        set profiles url-filtering URL-DefaultProfile alert copyright-infringement
+        set profiles url-filtering URL-DefaultProfile alert cryptocurrency
+        set profiles url-filtering URL-DefaultProfile alert dating
+        set profiles url-filtering URL-DefaultProfile alert educational-institutions
+        set profiles url-filtering URL-DefaultProfile alert entertainment-and-arts
+        set profiles url-filtering URL-DefaultProfile alert extremism
+        set profiles url-filtering URL-DefaultProfile alert financial-services
+        set profiles url-filtering URL-DefaultProfile alert gambling
+        set profiles url-filtering URL-DefaultProfile alert games
+        set profiles url-filtering URL-DefaultProfile alert government
+        set profiles url-filtering URL-DefaultProfile alert health-and-medicine
+        set profiles url-filtering URL-DefaultProfile alert high-risk
+        set profiles url-filtering URL-DefaultProfile alert home-and-garden
+        set profiles url-filtering URL-DefaultProfile alert hunting-and-fishing
+        set profiles url-filtering URL-DefaultProfile alert insufficient-content
+        set profiles url-filtering URL-DefaultProfile alert internet-communications-and-telephony
+        set profiles url-filtering URL-DefaultProfile alert internet-portals
+        set profiles url-filtering URL-DefaultProfile alert job-search
+        set profiles url-filtering URL-DefaultProfile alert legal
+        set profiles url-filtering URL-DefaultProfile alert low-risk
+        set profiles url-filtering URL-DefaultProfile alert medium-risk
+        set profiles url-filtering URL-DefaultProfile alert military
+        set profiles url-filtering URL-DefaultProfile alert motor-vehicles
+        set profiles url-filtering URL-DefaultProfile alert music
+        set profiles url-filtering URL-DefaultProfile alert news
+        set profiles url-filtering URL-DefaultProfile alert not-resolved
+        set profiles url-filtering URL-DefaultProfile alert nudity
+        set profiles url-filtering URL-DefaultProfile alert online-storage-and-backup
+        set profiles url-filtering URL-DefaultProfile alert peer-to-peer
+        set profiles url-filtering URL-DefaultProfile alert personal-sites-and-blogs
+        set profiles url-filtering URL-DefaultProfile alert philosophy-and-political-advocacy
+        set profiles url-filtering URL-DefaultProfile alert private-ip-addresses
+        set profiles url-filtering URL-DefaultProfile alert proxy-avoidance-and-anonymizers
+        set profiles url-filtering URL-DefaultProfile alert questionable
+        set profiles url-filtering URL-DefaultProfile alert real-estate
+        set profiles url-filtering URL-DefaultProfile alert real-time-detection
+        set profiles url-filtering URL-DefaultProfile alert recreation-and-hobbies
+        set profiles url-filtering URL-DefaultProfile alert reference-and-research
+        set profiles url-filtering URL-DefaultProfile alert religion
+        set profiles url-filtering URL-DefaultProfile alert search-engines
+        set profiles url-filtering URL-DefaultProfile alert sex-education
+        set profiles url-filtering URL-DefaultProfile alert shareware-and-freeware
+        set profiles url-filtering URL-DefaultProfile alert shopping
+        set profiles url-filtering URL-DefaultProfile alert social-networking
+        set profiles url-filtering URL-DefaultProfile alert society
+        set profiles url-filtering URL-DefaultProfile alert sports
+        set profiles url-filtering URL-DefaultProfile alert stock-advice-and-tools
+        set profiles url-filtering URL-DefaultProfile alert streaming-media
+        set profiles url-filtering URL-DefaultProfile alert swimsuits-and-intimate-apparel
+        set profiles url-filtering URL-DefaultProfile alert training-and-tools
+        set profiles url-filtering URL-DefaultProfile alert translation
+        set profiles url-filtering URL-DefaultProfile alert travel
+        set profiles url-filtering URL-DefaultProfile alert unknown
+        set profiles url-filtering URL-DefaultProfile alert weapons
+        set profiles url-filtering URL-DefaultProfile alert web-advertisements
+        set profiles url-filtering URL-DefaultProfile alert web-based-email
+        set profiles url-filtering URL-DefaultProfile alert web-hosting
+        set profiles url-filtering URL-DefaultProfile block command-and-control
+        set profiles url-filtering URL-DefaultProfile block dynamic-dns
+        set profiles url-filtering URL-DefaultProfile block grayware
+        set profiles url-filtering URL-DefaultProfile block hacking
+        set profiles url-filtering URL-DefaultProfile block malware
+        set profiles url-filtering URL-DefaultProfile block newly-registered-domain
+        set profiles url-filtering URL-DefaultProfile block parked
+        set profiles url-filtering URL-DefaultProfile block phishing
+        set profiles url-filtering URL-DefaultProfile block ransomware
+        set profiles url-filtering URL-Alert credential-enforcement mode disabled
+        set profiles url-filtering URL-Alert credential-enforcement log-severity medium
+        set profiles url-filtering URL-Alert alert abortion
+        set profiles url-filtering URL-Alert alert abused-drugs
+        set profiles url-filtering URL-Alert alert adult
+        set profiles url-filtering URL-Alert alert alcohol-and-tobacco
+        set profiles url-filtering URL-Alert alert auctions
+        set profiles url-filtering URL-Alert alert business-and-economy
+        set profiles url-filtering URL-Alert alert command-and-control
+        set profiles url-filtering URL-Alert alert computer-and-internet-info
+        set profiles url-filtering URL-Alert alert content-delivery-networks
+        set profiles url-filtering URL-Alert alert copyright-infringement
+        set profiles url-filtering URL-Alert alert cryptocurrency
+        set profiles url-filtering URL-Alert alert dating
+        set profiles url-filtering URL-Alert alert dynamic-dns
+        set profiles url-filtering URL-Alert alert educational-institutions
+        set profiles url-filtering URL-Alert alert entertainment-and-arts
+        set profiles url-filtering URL-Alert alert extremism
+        set profiles url-filtering URL-Alert alert financial-services
+        set profiles url-filtering URL-Alert alert gambling
+        set profiles url-filtering URL-Alert alert games
+        set profiles url-filtering URL-Alert alert government
+        set profiles url-filtering URL-Alert alert grayware
+        set profiles url-filtering URL-Alert alert hacking
+        set profiles url-filtering URL-Alert alert health-and-medicine
+        set profiles url-filtering URL-Alert alert high-risk
+        set profiles url-filtering URL-Alert alert home-and-garden
+        set profiles url-filtering URL-Alert alert hunting-and-fishing
+        set profiles url-filtering URL-Alert alert insufficient-content
+        set profiles url-filtering URL-Alert alert internet-communications-and-telephony
+        set profiles url-filtering URL-Alert alert internet-portals
+        set profiles url-filtering URL-Alert alert job-search
+        set profiles url-filtering URL-Alert alert legal
+        set profiles url-filtering URL-Alert alert low-risk
+        set profiles url-filtering URL-Alert alert malware
+        set profiles url-filtering URL-Alert alert medium-risk
+        set profiles url-filtering URL-Alert alert military
+        set profiles url-filtering URL-Alert alert motor-vehicles
+        set profiles url-filtering URL-Alert alert music
+        set profiles url-filtering URL-Alert alert newly-registered-domain
+        set profiles url-filtering URL-Alert alert news
+        set profiles url-filtering URL-Alert alert not-resolved
+        set profiles url-filtering URL-Alert alert nudity
+        set profiles url-filtering URL-Alert alert online-storage-and-backup
+        set profiles url-filtering URL-Alert alert parked
+        set profiles url-filtering URL-Alert alert peer-to-peer
+        set profiles url-filtering URL-Alert alert personal-sites-and-blogs
+        set profiles url-filtering URL-Alert alert philosophy-and-political-advocacy
+        set profiles url-filtering URL-Alert alert phishing
+        set profiles url-filtering URL-Alert alert private-ip-addresses
+        set profiles url-filtering URL-Alert alert proxy-avoidance-and-anonymizers
+        set profiles url-filtering URL-Alert alert questionable
+        set profiles url-filtering URL-Alert alert ransomware
+        set profiles url-filtering URL-Alert alert real-estate
+        set profiles url-filtering URL-Alert alert real-time-detection
+        set profiles url-filtering URL-Alert alert recreation-and-hobbies
+        set profiles url-filtering URL-Alert alert reference-and-research
+        set profiles url-filtering URL-Alert alert religion
+        set profiles url-filtering URL-Alert alert search-engines
+        set profiles url-filtering URL-Alert alert sex-education
+        set profiles url-filtering URL-Alert alert shareware-and-freeware
+        set profiles url-filtering URL-Alert alert shopping
+        set profiles url-filtering URL-Alert alert social-networking
+        set profiles url-filtering URL-Alert alert society
+        set profiles url-filtering URL-Alert alert sports
+        set profiles url-filtering URL-Alert alert stock-advice-and-tools
+        set profiles url-filtering URL-Alert alert streaming-media
+        set profiles url-filtering URL-Alert alert swimsuits-and-intimate-apparel
+        set profiles url-filtering URL-Alert alert training-and-tools
+        set profiles url-filtering URL-Alert alert translation
+        set profiles url-filtering URL-Alert alert travel
+        set profiles url-filtering URL-Alert alert unknown
+        set profiles url-filtering URL-Alert alert weapons
+        set profiles url-filtering URL-Alert alert web-advertisements
+        set profiles url-filtering URL-Alert alert web-based-email
+        set profiles url-filtering URL-Alert alert web-hosting
+        set profiles file-blocking FB-Alert rules Alert application any
+        set profiles file-blocking FB-Alert rules Alert file-type any
+        set profiles file-blocking FB-Alert rules Alert direction both
+        set profiles file-blocking FB-Alert rules Alert action alert
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" application any
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" file-type encrypted-7z
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" file-type encrypted-rar
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" file-type encrypted-zip
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" direction both
+        set profiles file-blocking FB-Basic rules "Block Encrypted Zip" action block
+        set profiles file-blocking FB-Basic rules Alert-All application any
+        set profiles file-blocking FB-Basic rules Alert-All file-type any
+        set profiles file-blocking FB-Basic rules Alert-All direction both
+        set profiles file-blocking FB-Basic rules Alert-All action alert
+        set profiles wildfire-analysis WF-Profile rules WildFire application any
+        set profiles wildfire-analysis WF-Profile rules WildFire file-type any
+        set profiles wildfire-analysis WF-Profile rules WildFire direction both
+        set profiles wildfire-analysis WF-Profile rules WildFire analysis public-cloud
+        set profile-group TP-Inbound virus AV-Profile
+        set profile-group TP-Inbound spyware AS-Inbound
+        set profile-group TP-Inbound vulnerability VP-Inbound
+        set profile-group TP-Inbound file-blocking FB-Basic
+        set profile-group TP-Inbound wildfire-analysis WF-Profile
+        set profile-group TP-Outbound virus AV-Profile
+        set profile-group TP-Outbound spyware AS-Outbound
+        set profile-group TP-Outbound vulnerability VP-Outbound
+        set profile-group TP-Outbound file-blocking FB-Basic
+        set profile-group TP-Outbound wildfire-analysis WF-Profile
+        set profile-group TP-Outbound url-filtering URL-DefaultProfile
+        set profile-group TP-Internal virus AV-Profile
+        set profile-group TP-Internal spyware AS-Internal
+        set profile-group TP-Internal vulnerability VP-Internal
+        set profile-group TP-Internal file-blocking FB-Alert
+        set profile-group TP-Internal wildfire-analysis WF-Profile
+        set profile-group TP-Alert virus AV-Alert
+        set profile-group TP-Alert spyware AS-Alert
+        set profile-group TP-Alert vulnerability VP-Alert
+        set profile-group TP-Alert url-filtering URL-Alert
+        set profile-group TP-Alert file-blocking FB-Alert
+        set profile-group TP-Alert wildfire-analysis WF-Profile
+        set rulebase security rules "Outbound Blacklist" to any
+        set rulebase security rules "Outbound Blacklist" from any
+        set rulebase security rules "Outbound Blacklist" source any
+        set rulebase security rules "Outbound Blacklist" destination panw-highrisk-ip-list
+        set rulebase security rules "Outbound Blacklist" destination panw-known-ip-list
+        set rulebase security rules "Outbound Blacklist" destination panw-torexit-ip-list
+        set rulebase security rules "Outbound Blacklist" source-user any
+        set rulebase security rules "Outbound Blacklist" category any
+        set rulebase security rules "Outbound Blacklist" application any
+        set rulebase security rules "Outbound Blacklist" service any
+        set rulebase security rules "Outbound Blacklist" source-hip any
+        set rulebase security rules "Outbound Blacklist" destination-hip any
+        set rulebase security rules "Outbound Blacklist" action deny
+        set rulebase security rules "Outbound Blacklist" tag Blacklist
+        set rulebase security rules "Inbound Blacklist" to any
+        set rulebase security rules "Inbound Blacklist" from any
+        set rulebase security rules "Inbound Blacklist" source panw-bulletproof-ip-list
+        set rulebase security rules "Inbound Blacklist" source panw-highrisk-ip-list
+        set rulebase security rules "Inbound Blacklist" source panw-known-ip-list
+        set rulebase security rules "Inbound Blacklist" destination any
+        set rulebase security rules "Inbound Blacklist" source-user any
+        set rulebase security rules "Inbound Blacklist" category any
+        set rulebase security rules "Inbound Blacklist" application any
+        set rulebase security rules "Inbound Blacklist" service any
+        set rulebase security rules "Inbound Blacklist" source-hip any
+        set rulebase security rules "Inbound Blacklist" destination-hip any
+        set rulebase security rules "Inbound Blacklist" action deny
+        set rulebase security rules "Inbound Blacklist" tag Blacklist
+        set rulebase security rules Allow_Outbound_Traffic from inside
+        set rulebase security rules Allow_Outbound_Traffic to outside
+        set rulebase security rules Allow_Outbound_Traffic source TESTHOST-LAN
+        set rulebase security rules Allow_Outbound_Traffic destination any
+        set rulebase security rules Allow_Outbound_Traffic source-user any
+        set rulebase security rules Allow_Outbound_Traffic category any
+        set rulebase security rules Allow_Outbound_Traffic application any
+        set rulebase security rules Allow_Outbound_Traffic service any
+        set rulebase security rules Allow_Outbound_Traffic action allow
+        set rulebase security rules Allow_Outbound_Traffic profile-setting group TP-Outbound
+        set rulebase security rules Allow_Outbound_Traffic source-hip any
+        set rulebase security rules Allow_Outbound_Traffic destination-hip any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS from global-protect
+        set rulebase security rules Allow_Outbound_GPVPN_DNS to outside
+        set rulebase security rules Allow_Outbound_GPVPN_DNS source any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS destination any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS source-user any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS category any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS application dns
+        set rulebase security rules Allow_Outbound_GPVPN_DNS service application-default
+        set rulebase security rules Allow_Outbound_GPVPN_DNS action allow
+        set rulebase security rules Allow_Outbound_GPVPN_DNS profile-setting group TP-Outbound
+        set rulebase security rules Allow_Outbound_GPVPN_DNS source-hip any
+        set rulebase security rules Allow_Outbound_GPVPN_DNS destination-hip any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside from global-protect
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside to inside
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside source any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside destination any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside source-user any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside category any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside application any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside service any
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside action allow
+        set rulebase security rules Allow_GlobalProtect_Clients_To_Inside profile-setting group TP-Internal
+        set rulebase nat rules Default_PAT source-translation dynamic-ip-and-port interface-address interface ethernet1/1
+        set rulebase nat rules Default_PAT source-translation dynamic-ip-and-port interface-address ip 1.1.1.1/30
+        set rulebase nat rules Default_PAT to outside
+        set rulebase nat rules Default_PAT from inside
+        set rulebase nat rules Default_PAT from global-protect
+        set rulebase nat rules Default_PAT source TESTHOST-LAN
+        set rulebase nat rules Default_PAT source GlobalProtect_Client_IPPool
+        set rulebase nat rules Default_PAT destination any
+        set rulebase nat rules Default_PAT service any
+        set rulebase default-security-rules rules intrazone-default action allow
+        set rulebase default-security-rules rules intrazone-default log-start no
+        set rulebase default-security-rules rules intrazone-default log-end yes
+        set rulebase default-security-rules rules intrazone-default profile-setting group TP-Internal
+        set rulebase default-security-rules rules interzone-default action deny
+        set rulebase default-security-rules rules interzone-default log-start no
+        set rulebase default-security-rules rules interzone-default log-end yes
