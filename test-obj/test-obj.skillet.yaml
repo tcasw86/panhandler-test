@@ -1,0 +1,43 @@
+name: test-obj
+
+label: Test Address Object
+
+description: Create test object
+
+type: panos
+
+labels:
+
+    collection: Unknown
+
+variables:
+
+-   name: obj_name
+    description: obj_name
+    type_hint: text
+    default: ''
+
+-   name: ip_netmask
+    description: ip_netmask
+    type_hint: cidr
+    default: ''
+    help_text: ''
+
+-   name: obj_desc
+    description: obj_desc
+    type_hint: text
+    default: ''
+
+snippets:
+
+-   name: address-469963
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/vsys/entry[@name="vsys1"]
+    element: |-
+        <address>
+          <entry name="{{ obj_name }}">
+            <ip-netmask>{{ ip_netmask }}</ip-netmask>
+            <description>{{ obj_desc }}</description>
+          </entry>
+        </address>
+    cmd: set
+
